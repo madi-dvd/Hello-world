@@ -95,3 +95,83 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты предсказания</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .date {
+            color: #888;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+        h2 { margin-top: 0; }
+        .prediction-list {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .prediction-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        .prediction-item:last-child { border-bottom: none; }
+        .percent { font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- Сюда вставится дата через JS -->
+        <div class="date" id="current-date"></div>
+
+        <h2>Топ-3 предсказаний:</h2>
+        
+        <div class="prediction-list">
+            <div class="prediction-item">
+                <span>Pomeranian</span>
+                <span class="percent">96.12%</span>
+            </div>
+            <div class="prediction-item">
+                <span>Japanese Chin</span>
+                <span class="percent">0.71%</span>
+            </div>
+            <div class="prediction-item">
+                <span>kit fox</span>
+                <span class="percent">0.44%</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Скрипт для получения сегодняшней даты
+        const dateElement = document.getElementById('current-date');
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const today = new Date();
+        
+        // Форматируем дату на русском языке
+        dateElement.textContent = today.toLocaleDateString('ru-RU', options);
+    </script>
+
+</body>
+</html>
