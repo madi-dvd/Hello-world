@@ -111,31 +111,20 @@
         kit fox: 0.44%
     </p>
 
-    <script>
-        document.getElementById('date').innerText = new Date().toLocaleDateString('ru-RU');
-    </script>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        .date { text-align: center; color: gray; margin-bottom: 30px; font-size: 1.2em; }
+        p { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="date">25.02.26</div>
+    <p><b>Вопрос пользователя:</b> Как оплатить заказ?</p>
+    <p><b>Найден FAQ-вопрос:</b> Как быстро доставляется заказ? (sim=0.788)</p>
+    <p><b>Ответ бот-FAQ:</b> Наш стандартный срок доставки — 3–5 рабочих дней.</p>
 </body>
 </html>
-from datetime import datetime
-
-def main():
-    # Устанавливаем нужную дату
-    date_str = "25.02.26"
-    
-    # Данные диалога
-    user_question = "Как оплатить заказ?"
-    found_faq = "Как быстро доставляется заказ?"
-    similarity_score = 0.788
-    bot_answer = "Наш стандартный срок доставки — 3–5 рабочих дней."
-
-    # Вывод в консоль
-    print(f"📅 Дата: {date_str}")
-    print("-" * 40)
-    print(f"Вопрос пользователя: {user_question}")
-    print(f"Найден FAQ-вопрос: {found_faq} (sim={similarity_score})")
-    print(f"Ответ бот-FAQ: {bot_answer}")
-    print("-" * 40)
-
-if __name__ == "__main__":
-    main()
